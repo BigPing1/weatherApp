@@ -146,7 +146,7 @@ async function searchAutocomplete(inputData) {
   try {
     autocompleteSection.innerHTML = '';
     const response = await fetch(
-      `http://api.weatherapi.com/v1/search.json?key=e37667604e7744a5a66142153260605&q=${inputData}`,
+      `https://api.weatherapi.com/v1/search.json?key=e37667604e7744a5a66142153260605&q=${inputData}`,
     );
     const data = await response.json();
     let autocomArr = data.map(item => {
