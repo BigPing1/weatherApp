@@ -128,10 +128,20 @@ function wrongSearchData(message) {
 }
 // Function autocomplete
 let currentWord = '';
+let timeoutId;
+
 searchInput.addEventListener('input', e => {
   autocompleteSection.classList.remove('hidden');
+
   currentWord = e.target.value;
-  searchAutocomplete(currentWord);
+
+  clearTimeout(timeoutId);
+
+  timeoutId = setTimeout(() => {
+    if (currentWord.trim() !== '') {
+      searchAutocomplete(currentWord);
+    }
+  }, 400);
 });
 searchInput.addEventListener('click', e => {
   autocompleteSection.classList.remove('hidden');
