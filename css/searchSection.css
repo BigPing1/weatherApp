@@ -1,0 +1,170 @@
+.searchWeather__section {
+  width: 100%;
+  max-width: 680px;
+  margin: 40px auto 20px;
+}
+
+.searchWeather__container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  padding: 6px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+.searchWeather__form {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+.searchWeather__form:focus-within {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.searchWeather__input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.searchWeather__input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.searchWeather__button {
+  background: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #7e98df;
+}
+
+.searchWeather__button:hover {
+  transform: scale(1.1);
+}
+
+.searchWeather__button:active {
+  transform: scale(0.9) translateX(2px);
+}
+
+.input-error::placeholder {
+  color: lightcoral;
+  font-size: small;
+  font-style: italic;
+}
+
+/* Контейнер списка автозаполнения */
+.searchWeather__autocomplete {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Стилизация скроллбара */
+.searchWeather__autocomplete::-webkit-scrollbar {
+  width: 4px;
+}
+.searchWeather__autocomplete::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+/* Элемент списка */
+.searchWeather__suggestion {
+  padding: 12px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  color: #fff;
+}
+
+.searchWeather__suggestion:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.suggestion-city {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.suggestion-country {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+/* --- АДАПТИВ ПОД ТЕЛЕФОНЫ --- */
+@media (max-width: 480px) {
+  .searchWeather__section {
+    margin: 20px auto 10px;
+    padding: 0 10px;
+  }
+
+  .searchWeather__container {
+    padding: 4px; /* Компактнее на мобилках */
+  }
+
+  .searchWeather__input {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+
+  .searchWeather__button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .searchWeather__suggestion {
+    padding: 10px 15px; /* Меньше отступы в подсказках */
+  }
+}

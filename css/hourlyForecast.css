@@ -1,0 +1,107 @@
+.hourlyForecast__section {
+  width: 100px; /* Узкая колонка слева для десктопа */
+  height: 560px;
+}
+
+.hourlyForecast__list {
+  list-style: none;
+  height: 100%;
+  overflow-y: auto; /* Включаем вертикальный скролл */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  /* Стили стекла */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+
+  /* Скрываем стандартный скроллбар для чистоты */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+/* Кастомизация скроллбара для Chrome/Safari */
+.hourlyForecast__list::-webkit-scrollbar {
+  width: 4px;
+}
+.hourlyForecast__list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.hourlyForecast__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0; /* Важно для горизонтального скролла */
+}
+
+.hourlyForecast__item:last-child {
+  border-bottom: none;
+}
+
+.hourlyForecast__image {
+  width: 35px;
+  height: 35px;
+  filter: brightness(0) invert(1); /* Белые иконки */
+}
+
+.hourlyForecast__temp {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 5px 0;
+}
+
+.hourlyForecast__time {
+  font-size: 0.7rem;
+  color: #2c3e50;
+  opacity: 0.8;
+  font-weight: 700;
+}
+
+/* --- АДАПТИВ ПОД ТЕЛЕФОНЫ --- */
+@media (max-width: 900px) {
+  .hourlyForecast__section {
+    width: 320px; /* Совпадает с шириной других карточек */
+    height: auto; /* Высота теперь зависит от контента */
+    order: 2; /* Почасовой прогноз будет идти после главной карточки */
+  }
+
+  .hourlyForecast__list {
+    flex-direction: row; /* Часы выстраиваются в ряд */
+    overflow-y: hidden; /* Выключаем вертикальный скролл */
+    overflow-x: auto; /* Включаем горизонтальный скролл */
+    padding: 15px;
+    gap: 20px;
+    height: 140px; /* Ограничиваем высоту для горизонтальной полосы */
+  }
+
+  /* Настраиваем полосу прокрутки для горизонтального вида */
+  .hourlyForecast__list::-webkit-scrollbar {
+    height: 4px; /* Теперь настраиваем высоту скроллбара */
+    width: auto;
+  }
+
+  .hourlyForecast__item {
+    border-bottom: none; /* Убираем нижнюю границу */
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Добавляем боковую границу-разделитель */
+    padding: 0 15px 0 0;
+  }
+
+  .hourlyForecast__item:last-child {
+    border-right: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hourlyForecast__section {
+    width: 90vw; /* На смартфонах растягиваем по ширине */
+  }
+}

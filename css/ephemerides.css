@@ -1,0 +1,75 @@
+.ephemerides__section {
+  width: 320px; /* Такая же ширина, как у основной карточки */
+  margin-top: 0;
+}
+
+.ephemerides__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Чтобы элементы красиво встали в сетку */
+  gap: 10px;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+.ephemerides__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 20%; /* Равномерно распределяем 4 элемента */
+  min-width: 60px;
+}
+
+.ephemerides__image {
+  width: 50px;
+  height: 30px;
+  object-fit: contain;
+  margin-bottom: 5px;
+
+  /* Делаем их белыми и матовыми, как основную иконку */
+  filter: brightness(0) invert(1) opacity(0.8);
+}
+
+.ephemerides__text {
+  font-size: 0.7rem;
+  color: #2c3e50;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* --- АДАПТИВ ПОД ТЕЛЕФОНЫ --- */
+@media (max-width: 900px) {
+  .ephemerides__section {
+    order: 3;
+    width: 320px;
+    margin-top: 10px; /* Добавляем отступ сверху в мобильной стопке */
+  }
+}
+
+@media (max-width: 480px) {
+  .ephemerides__section {
+    width: 90vw; /* Адаптируем под ширину экрана смартфона */
+  }
+
+  .ephemerides__list {
+    padding: 12px 10px;
+    gap: 5px; /* Немного плотнее на маленьких экранах */
+  }
+
+  .ephemerides__text {
+    font-size: 0.65rem; /* Чуть меньше текст, чтобы точно не вылезал */
+  }
+
+  .ephemerides__image {
+    width: 40px; /* Немного уменьшаем иконки */
+    height: 25px;
+  }
+}

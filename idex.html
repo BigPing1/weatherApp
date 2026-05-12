@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Warm&Cold</title>
+   <link rel="icon" type="image/png" href="images/logo.png">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/searchSection.css">
+   <link rel="stylesheet" href="css/ephemerides.css">
+   <link rel="stylesheet" href="css/hourlyForecast.css">
+   <link rel="stylesheet" href="css/otherInfo.css">
+   <script defer src="js/script.js"></script>
+</head>
+
+<body>
+   <div class="main-wrapper">
+      <main class="mainHTML">
+         <section class="searchWeather__section">
+            <div class="searchWeather__container">
+               <div class="searchWeather__form">
+                  <input type="text" class="searchWeather__input" placeholder="Search city...">
+                  <button disabled class="searchWeather__button">➔</button>
+               </div>
+
+            </div>
+            <div class="searchWeather__autocomplete hidden">
+            </div>
+         </section>
+         <div class="forecast-wrapper">
+            <section class="hourlyForecast__section">
+               <ul class="hourlyForecast__list">
+               </ul>
+            </section>
+
+            <div class="weather-main-column">
+               <section class="myPositionWeather__section">
+                  <ul class="myPositionWeather__list">
+                     <li class="myPositionWeather__item myPositionWeather__topText"></li>
+                     <li class="myPositionWeather__item">
+                        <p class="myPositionWeather__city">Detecting...</p>
+                        <p class="myPositionWeather__country"></p>
+                     </li>
+                     <li class="myPositionWeather__item myPositionWeather__temperature"></li>
+                     <li class="myPositionWeather__item myPositionWeather__feelLike"></li>
+                     <li class="myPositionWeather__item waitLittle">Wait a little</li>
+                  </ul>
+               </section>
+               <section class="ephemerides__section">
+                  <ul class="ephemerides__list">
+                     <li class="ephemerides__item">
+                        <img class="ephemerides__image" src="images/icons/sunrice.png" alt="">
+                        <p class="ephemerides__text sunrice"></p>
+                     </li>
+                     <li class="ephemerides__item">
+                        <img class="ephemerides__image" src="images/icons/sunset.png" alt="">
+                        <p class="ephemerides__text sunset"></p>
+                     </li>
+                     <li class="ephemerides__item">
+                        <img class="ephemerides__image" src="images/icons/moonrise.png" alt="">
+                        <p class="ephemerides__text moonrise"></p>
+                     </li>
+                     <li class="ephemerides__item">
+                        <img class="ephemerides__image" src="images/icons/moonset.png" alt="">
+                        <p class="ephemerides__text moonset"></p>
+                     </li>
+                  </ul>
+               </section>
+            </div>
+            <section class="otherInfo__section">
+               <div class="otherInfo__item">
+                  <span class="otherInfo__label">Humidity</span>
+                  <span class="otherInfo__value otherInfo__humidity"></span>
+               </div>
+               <div class="otherInfo__item">
+                  <span class="otherInfo__label">Avg Temp</span>
+                  <span class="otherInfo__value otherInfo__avgTemp"></span>
+               </div>
+               <div class="otherInfo__item">
+                  <span class="otherInfo__label">Visibility</span>
+                  <span class="otherInfo__value otherInfo__vis"></span>
+               </div>
+               <div class="otherInfo__item">
+                  <span class="otherInfo__label">Rain Chance</span>
+                  <span class="otherInfo__value otherInfo__rain"></span>
+               </div>
+               <div class="otherInfo__item">
+                  <span class="otherInfo__label">Snow Chance</span>
+                  <span class="otherInfo__value otherInfo__snow"></span>
+               </div>
+               <div class="otherInfo__item">
+                  <span class="otherInfo__label">Max Temp</span>
+                  <span class="otherInfo__value otherInfo__maxTemp"></span>
+               </div>
+               <div class="otherInfo__item">
+                  <span class="otherInfo__label">Max Wind</span>
+                  <span class="otherInfo__value otherInfo__wind"></span>
+               </div>
+               <div class="otherInfo__item">
+                  <span class="otherInfo__label">Min Temp</span>
+                  <span class="otherInfo__value otherInfo__minTemp"></span>
+               </div>
+            </section>
+         </div>
+      </main>
+   </div>
+</body>
+
+</html>
