@@ -77,7 +77,7 @@ async function getWeather(cityName) {
   // Request
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=e37667604e7744a5a66142153260605&q=${cityName}`,
+      `https://api.weatherapi.com/v1/current.json?key=e37667604e7744a5a66142153260605&q=${cityName}`,
     );
     const data = await response.json();
 
@@ -183,7 +183,7 @@ async function getForecast(currentCity) {
   const now = new Date();
 
   const response = await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=e37667604e7744a5a66142153260605&q=${currentCity}`,
+    `https://api.weatherapi.com/v1/forecast.json?key=e37667604e7744a5a66142153260605&q=${currentCity}`,
   );
   const data = await response.json();
   const { forecastday } = data.forecast;
